@@ -1,0 +1,16 @@
+<div class="controls">
+  <input [(ngModel)]="searchName" placeholder="Search by name" />
+  <button (click)="loadEpisodes()">Search</button>
+</div>
+<div class="cards">
+  <div *ngFor="let episode of episodes" class="card">
+    <h3>{{ episode.name }}</h3>
+    <p>Air Date: {{ episode.air_date }}</p>
+    <p>Episode: {{ episode.episode }}</p>
+  </div>
+</div>
+<div class="pagination">
+  <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{ currentPage }}</span>
+  <button (click)="nextPage()">Next</button>
+</div>
